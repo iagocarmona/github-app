@@ -13,8 +13,6 @@ class App extends Component {
     }
   }
 
-  // testee
-
   getGithubApiUrl(username, type) {
     const internalUser = username ? `/${username}` : ''
     const internalType = type ? `/${type}` : ''
