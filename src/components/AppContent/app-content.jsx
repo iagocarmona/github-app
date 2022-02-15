@@ -1,9 +1,9 @@
 import React from 'react'
 
-import Actions from './actions'
-import Repos from './repos'
-import Search from './search'
-import UserInfo from './user-info'
+import Actions from '../Actions/actions'
+import Repos from '../Repos/repos'
+import Search from '../Search/search'
+import UserInfo from '../UserInfo/user-info'
 
 import propTypes from 'prop-types'
 
@@ -21,11 +21,9 @@ const AppContent = ({
     {isFetching && <div>Carregando...</div>}
     {!!userinfo && <UserInfo userinfo={userinfo} />}
     {!!userinfo && <Actions getRepos={getRepos} getStarred={getStarred} />}
-
     {!!repos.length && (
       <Repos className="repos" title="Repositórios:" repos={repos} />
     )}
-
     {!!starred.length && (
       <Repos className="starred" title="Favoritos:" repos={starred} />
     )}

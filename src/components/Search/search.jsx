@@ -1,15 +1,17 @@
 import React from 'react'
 import propTypes from 'prop-types'
 
+import { Wrapper, Input } from './style'
+
 const Search = ({ isDisabled, handleSearch }) => (
-  <div className="search">
-    <input
-      type="search"
+  <Wrapper>
+    <Input
+      type="text"
       placeholder="Digite o nome do usuário do github"
       disabled={isDisabled}
       onKeyUp={handleSearch}
-    ></input>
-  </div>
+    ></Input>
+  </Wrapper>
 )
 
 Search.propTypes = {
