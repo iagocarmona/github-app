@@ -10,6 +10,7 @@ class App extends Component {
       repos: [],
       starred: [],
       isFetching: false,
+      showImage: true,
     }
   }
 
@@ -47,13 +48,14 @@ class App extends Component {
         .always(() => {
           this.setState({
             isFetching: false,
+            showImage: false,
           })
         })
     }
   }
 
   getRepos(type) {
-    return (e) => {
+    return () => {
       const username = this.state.userinfo.login
       ajax()
         .get(this.getGithubApiUrl(username, type))
